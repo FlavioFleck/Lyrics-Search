@@ -1,0 +1,121 @@
+:root {
+    --blue: hsl(207, 80%, 62%);
+    --darkblue: hsl(207, 52%, 50%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.titles  {
+    margin: 20px 0px;
+}
+
+.inputs {
+    display: flex;
+    gap: 5px;
+}
+
+.input {
+    padding: 5px;
+    border: 1px solid var(--blue);
+    height: 25px;
+    width: 200px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--darkblue);
+}
+
+.button {
+    padding: 5px;
+    height: 3rem;
+    width: 10rem;
+    border: none;
+    background-color: var(--blue);
+    color: white;
+    margin-top: 20px;
+    transition: .3s;
+}
+.button:hover {
+    cursor: pointer;
+    background-color: var(--darkblue);
+}
+
+#title {
+    font-size: 2rem;
+}
+
+#lyric-container {
+    display: flex;
+    flex-direction: column;
+}
+.background-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(2px);
+    transition: .5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    position: fixed;
+    height: 300px;
+    width: 500px;
+    padding: 20px;
+    opacity: 0;
+    background-color: white;
+    text-align: center;
+    box-sizing: content-box;
+    border-radius: 20px;
+    transform: scale(.8);
+    transition: .3s cubic-bezier(.58,.02,0,1.56);
+    transition-delay: .4s;
+}
+.modal.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.modal-content h1, p {
+    flex-grow: 1;
+}
